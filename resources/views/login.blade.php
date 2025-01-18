@@ -19,7 +19,7 @@
                             <div class="form-group">
                                 <label class="form-control-label">USERNAME</label>
                                 <input id="username" name="username" type="text" class="form-control"
-                                    value="{{ old('username') }}">
+                                value="{{ old('username') ?: session('username') }}" placeholder="Enter your username">
                                 @error('username')
                                     <span class="error-message" style="color: red;">{{ $message }}</span>
                                 @enderror

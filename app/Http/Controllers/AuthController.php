@@ -49,13 +49,22 @@ class AuthController extends Controller
         return back()->withErrors(['login_error' => 'Invalid username or password.'])->withInput();
     }
     //
-    public function dashboard() {
-        if (Auth::check()) {
-            $user = Auth::user(); 
-            return 'User is logged in as: ' . $user->username;
-        } else {
-            return 'User is not logged in.';
-        }
+    public function dashboard() {       
         return view ('dashboard');
+    }
+    //
+    public function logout(Request $request) {  
+        $user = Auth::user();
+
+        if ($user) {
+            $username = $user->username;
+        }
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        session(
+            ['last_username' =>  $username]
+        );
+        return response()->json(['redirect' => route('login')]);
     }
 }

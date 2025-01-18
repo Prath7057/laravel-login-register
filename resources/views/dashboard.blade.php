@@ -2,5 +2,7 @@
 @section('title','DashBoard')
 
 @section('content')
-Hi
+@if(session('success'))
+    {{session('success')}}
+@endsession
 @endsection

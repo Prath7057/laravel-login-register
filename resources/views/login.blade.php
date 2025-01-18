@@ -14,16 +14,23 @@
                 </div>
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form>
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('login') }}">
+                            @csrf
                             <div class="form-group">
                                 <label class="form-control-label">USERNAME</label>
-                                <input id="username" name="username" type="text" class="form-control">
+                                <input id="username" name="username" type="text" class="form-control"
+                                    value="{{ old('username') }}">
+                                @error('username')
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">PASSWORD</label>
-                                <input id="password" name="password" type="password" class="form-control" i>
+                                <input id="password" name="password" type="password" class="form-control">
+                                @error('password')
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
-
                             <div class="col-lg-12 loginbttm">
                                 <div class="col-lg-6 login-btm login-text">
                                 </div>

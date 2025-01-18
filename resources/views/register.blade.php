@@ -18,46 +18,56 @@
                             @csrf
                             <div class="form-group">
                                 <label class="form-control-label">USERNAME</label>
-                                <input id="username" name="username" type="text" class="form-control" value="{{ old('username') }}">
+                                <input id="username" name="username" type="text" class="form-control"
+                                    value="{{ old('username') }}">
                                 @error('username')
                                     <span class="error-message" style="color: red;">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">NAME</label>
-                                <input id="name" name="name" type="text" class="form-control" value="{{ old('name') }}">
+                                <input id="name" name="name" type="text" class="form-control"
+                                    value="{{ old('name') }}">
                                 @error('name')
-                                <span class="error-message" style="color: red;">{{ $message }}</span>
-                            @enderror
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">MOBILE NO</label>
-                                <input id="mobile" name="mobile" type="text" class="form-control" value="{{ old('mobile') }}">
+                                <input id="mobile" name="mobile" type="text" class="form-control"
+                                    value="{{ old('mobile') }}">
                                 @error('mobile')
-                                <span class="error-message" style="color: red;">{{ $message }}</span>
-                            @enderror
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">PASSWORD</label>
                                 <input id="password" name="password" type="password" class="form-control">
                                 @error('password')
-                                <span class="error-message" style="color: red;">{{ $message }}</span>
-                            @enderror
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">CONFIRM PASSWORD</label>
-                                <input id="password_confirmation" name="password_confirmation" type="password" class="form-control" >
+                                <input id="password_confirmation" name="password_confirmation" type="password"
+                                    class="form-control">
                                 @error('password_confirmation')
-                                <span class="error-message" style="color: red;">{{ $message }}</span>
-                            @enderror
+                                    <span class="error-message" style="color: red;">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="col-lg-12 loginbttm">
-                                <div class="col-lg-6 login-button">
+                                <div class="col-lg-6 login-btm login-text">
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
                                     <button type="submit" class="btn btn-outline-primary">Register</button>
                                 </div>
-                                <div class="col-lg-6 login-button">
-                                    <p><a href="{{ route('login') }}" class="link-info">Login Now</a></p>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <p><a href="{{ route('login') }}"
+                                            class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                                            Login Now
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </form>
